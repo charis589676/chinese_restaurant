@@ -15,5 +15,18 @@ export const CategoryList = [
         id: 3,
         name: 'Fuyunghai',
         icon : 'https://img-global.cpcdn.com/recipes/8c4aba383e02870e/680x482cq70/fu-yung-hai-persis-seperti-di-resto-chinese-food-foto-resep-utama.jpg'
+    },
+    {
+        id: 4,
+        name: 'Fried Rice',
+        icon : ''
+    }, {
+        id: 5,
+        name: 'Soup',
+        icon : ''
+    }, {
+        id: 6,
+        name: 'Meat',
+        icon : ''
     }
 ]
