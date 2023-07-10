@@ -19,14 +19,16 @@ export const CategoryList = [
     {
         id: 4,
         name: 'Fried Rice',
-        icon : ''
-    }, {
+        icon : 'https://christieathome.com/wp-content/uploads/2020/03/Chinese-Chicken-Fried-Rice-14.jpg'
+    }, 
+    {
         id: 5,
         name: 'Soup',
-        icon : ''
-    }, {
+        icon : 'https://www.thespruceeats.com/thmb/LlAdE3jWxxaNk25G1mnMCcOIrYA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/easy-egg-drop-soup-recipes-4071423-hero-02-6070f3ceefcd4ee3acfdba4e29a8a187.jpg'
+    }, 
+    {
         id: 6,
         name: 'Meat',
-        icon : ''
+        icon : 'https://natashaskitchen.com/wp-content/uploads/2020/03/Pan-Seared-Steak-4.jpg'
     }
 ]

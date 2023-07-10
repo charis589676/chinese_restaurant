@@ -2,6 +2,7 @@ import { FlatList, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { SliderBox } from 'react-native-image-slider-box'
 import { imageSlider } from '../../data/data'
+import { CategoryList } from '../../data/data'
 
 
 const HomeScreen = () => {
@@ -19,7 +20,7 @@ const HomeScreen = () => {
                 </Text>
             </View>
             <FlatList
-                data={}
+                data={CategoryList}
                 key={3}
                 numColumns={3}
                 keyExtractor={(item) => item.id}/>
