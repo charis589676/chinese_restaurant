@@ -4,10 +4,16 @@ export const CategoryList = [
     {
         id: 1,
         name: 'Noodle',
-        icon: ''
+        icon: 'https://msshiandmrhe.com/wp-content/uploads/2022/09/WeChat-Image_20220912212925.jpg'
     },
     {
         id: 2,
-        name: 'Omelette'
+        name: 'Omelette',
+        icon : 'https://img.taste.com.au/TP6Cmork/taste/2016/11/chinese-omelette-31745-1.jpeg'
+    },
+    {
+        id: 3,
+        name: 'Fuyunghai',
+        icon : 'https://img-global.cpcdn.com/recipes/8c4aba383e02870e/680x482cq70/fu-yung-hai-persis-seperti-di-resto-chinese-food-foto-resep-utama.jpg'
     }
 ]
