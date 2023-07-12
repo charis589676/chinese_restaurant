@@ -1,33 +1,90 @@
-import { FlatList, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import { SliderBox } from 'react-native-image-slider-box'
-import { imageSlider } from '../../data/data'
-import { CategoryList } from '../../data/data'
+import {
+    View,
+    Text,
+    StyleSheet,
+    Image,
+    FlatList,
+    TouchableOpacity,
+  } from 'react-native';
+  import React from 'react';
+  import {imageSlider, categoryList} from '../../data/data';
+  import {SliderBox} from 'react-native-image-slider-box';
+  import {
+    widthPercentageToDP as wp,
+    heightPercentageToDP as hp,
+  } from 'react-native-responsive-screen-hooks';
 
-
-const HomeScreen = () => {
+  const HomeScreen = props => {
+    const {navigation} = props;
     return (
-        <View style={styles.mainContainer}>
-            <SliderBox
-                image={imageSlider}
-                autoplay={true}
-                circleLoop={true}
-                sliderBoxHeight={40}
-            />
-            <View style={styles.titleContainer}>
-                <Text style={styles.text}>
-                    Categories
-                </Text>
-            </View>
-            <FlatList
-                data={CategoryList}
-                key={3}
-                numColumns={3}
-                keyExtractor={(item) => item.id}/>
+      <View style={styles.mainContainer}>
+        <SliderBox
+          images={imageSlider}
+          autoplay={true}
+          circleLoop={true}
+          sliderBoxHeight={hp('30%')}
+        />
+        <View style={styles.titleContainer}>
+          <Text style={styles.text}>Categories</Text>
         </View>
-    )
-}
+        <FlatList
+          data={categoryList}
+          numColumns={3}
+          keyExtractor={item => item.id}
+          contentContainerStyle={styles.flatListContainer}
+          showsVerticalScrollIndicator={false}
+          renderItem={({item}) => {
+            return (
+              <TouchableOpacity
+                style={styles.button}
+                onPress={() =>
+                  navigation.navigate('ShowProduct', {categoryId: item.id})
+                }>
+                <Image source={{uri: item.icon}} style={styles.icon} />
+                <Text style={styles.itemName}> {item.name}</Text>
+              </TouchableOpacity>
+            );
+          }}
+        />
+      </View>
+    );
+  };
 
-export default HomeScreen
+  const styles = StyleSheet.create({
+    mainContainer: {
+      backgroundColor: 'white',
+      flex: 1,
+    },
+    titleContainer: {
+      marginTop: 16,
+      alignItems: 'center',
+    },
+    text: {
+      fontSize: hp('2,5%'),
+      fontWeight: 'bold',
+      color: 'black',
+    },
+    flatListContainer: {
+      padding: 8,
+    },
+    button: {
+      flex: 1,
+      margin: 8,
+      borderWidth: 1,
+      borderColor: '#FCAF58',
+      borderRadius: 10,
+      height: hp('17%'),
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    icon: {
+      width: wp('20%'),
+      height: hp('12%-'),
+      resizeMode: 'contain',
+    },
+    itemName: {
+      color: 'black',
+    },
+  });
 
-const styles = StyleSheet.create({})
+  export default HomeScreen;

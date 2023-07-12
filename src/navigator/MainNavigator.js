@@ -15,9 +15,9 @@ const DrawerNav = () => {
             name='Home'
             component={HomeScreen}
             options={{
-                title: 'Daily Fashion',
+                title: 'Chineesee Food',
                 headerStyle: {
-                    backgroundColor: '#D1E5C2'
+                    backgroundColor: '#D3E5C2'
                 },
                 headerTitleAlign: 'center',
                 drawerIcon: config =>
