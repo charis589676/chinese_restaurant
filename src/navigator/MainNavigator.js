@@ -15,9 +15,9 @@ const DrawerNav = () => {
             name='Home'
             component={HomeScreen}
             options={{
-                title: 'Daily Fashion',
+                title: 'Chinese food',
                 headerStyle: {
-                    backgroundColor: '#D1E5C2'
+                    backgroundColor: '#A8A196'
                 },
                 headerTitleAlign: 'center',
                 drawerIcon: config =>
@@ -43,7 +43,7 @@ const MainNavigator = () => {
                         headerShown: false
                     }}
                 />
-               
+            
             </Stack.Navigator>
         </NavigationContainer>
     )
