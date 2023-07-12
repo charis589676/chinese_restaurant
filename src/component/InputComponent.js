@@ -23,11 +23,13 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
     }, input : {
-        borderBottomWidth : 1,
+        borderWidth : 1,
         textAlignVertical: 'bottom',
         fontSize: 16,
         width: '100%',
         color: '#F97B22',
-        backgroundColor: '#DBE2EF'
+        backgroundColor: '#F2EAD3',
+        borderRadius:20,
+        padding: 10
     }
 })

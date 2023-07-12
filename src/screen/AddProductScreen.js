@@ -74,7 +74,7 @@ const AddProductScreen = () => {
           category: productData.category,
           description: productData.description,
           price: parseInt(productData.price),
-          
+
         });
       });
       dropDownRef.current.reset();
@@ -223,10 +223,11 @@ const styles = StyleSheet.create({
     fontSize: hp('1.5%'),
   },
   registView: {
-    backgroundColor: '#884A39',
+    backgroundColor: '#F3AA60',
     padding: 8,
     borderRadius: 10,
-    margin: 20
+    margin: 20,
+    alignItems: 'center'
   },
   addFoodText: {
     color: 'white',
