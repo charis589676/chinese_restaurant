@@ -1,5 +1,4 @@
-import {
-  View,
+import {View,
   Text,
   TouchableOpacity,
   Image,
@@ -23,10 +22,7 @@ const AddProductScreen = () => {
     imagePath: '',
     category: null,
     description: '',
-    price: null,
-    instagram: '',
-    facebook: '',
-    phoneNumber: '',
+    price: null
   });
   const dropDownRef = useRef({});
 
@@ -67,26 +63,18 @@ const AddProductScreen = () => {
       productData.category === null
     ) {
       alert('Please fill all ');
-    } else if (
-      productData.phoneNumber === '' &&
-      productData.instagram === '' &&
-      productData.facebook === ''
-    ) {
-      alert('Please fill at least one seller contact !');
-    } else {
-      const allData = realm.objects('Product');
+    }else {
+      const allData = realm.objects('productFood');
       const lastId = allData.length === 0 ? 0 : allData[allData.length - 1].id;
       realm.write(() => {
-        realm.create('Product', {
+        realm.create('productFood', {
           id: lastId + 1,
-          productName: productData.productName,
+          foodName: productData.productName,
           imagePath: productData.imagePath,
           category: productData.category,
           description: productData.description,
           price: parseInt(productData.price),
-          instagram: productData.instagram,
-          facebook: productData.facebook,
-          phoneNumber: productData.phoneNumber,
+          
         });
       });
       dropDownRef.current.reset();
@@ -96,9 +84,6 @@ const AddProductScreen = () => {
         category: null,
         description: '',
         price: '',
-        instagram: '',
-        facebook: '',
-        phoneNumber: '',
       });
       alert('Successfully to save the product');
     }
@@ -107,6 +92,9 @@ const AddProductScreen = () => {
   return (
     <View style={styles.mainContainer}>
       <ScrollView contentContainerStyle={styles.scroll}>
+        <View style={styles.registView}>
+          <Text style={styles.addFoodText}> Register your food </Text>
+        </View>
         <View style={styles.imageContainer}>
           <TouchableOpacity
             style={styles.imageButton}
@@ -163,32 +151,6 @@ const AddProductScreen = () => {
             type="font-awesome"
           />
         </View>
-        <Text style={styles.sellerText}> Seller Contact</Text>
-        <InputComponent
-          keyboardType="numeric"
-          placeholder="Whatsapp number (ex. +9123789213)"
-          value={productData.phoneNumber}
-          onChangeText={text => onInputChange('phoneNumber', text)}
-          isIcon={true}
-          name="whatsapp"
-          type="font-awesome"
-        />
-        <InputComponent
-          placeholder="Instagram username (ex. timedooracademy)"
-          value={productData.instagram}
-          onChangeText={text => onInputChange('instagram', text)}
-          isIcon={true}
-          name="instagram"
-          type="font-awesome"
-        />
-        <InputComponent
-          placeholder="Facebook username"
-          value={productData.facebook}
-          onChangeText={text => onInputChange('facebook', text)}
-          isIcon={true}
-          name="facebook-square"
-          type="font-awesome"
-        />
         <View style={styles.buttonContainer}>
           <TouchableOpacity
             style={styles.saveButton}
@@ -252,14 +214,7 @@ const styles = StyleSheet.create({
   },
   selectDropdown: {
     borderRadius: 10,
-    backgroundColor: 'skyblue',
-    width: wp('40%'),
-    height: hp('4%'),
-    marginLeft: 8,
-  },
-  selectDropdown: {
-    borderRadius: 10,
-    backgroundColor: 'skyblue',
+    backgroundColor: '#A9907E',
     width: 150,
     height: 30,
     marginLeft: 8,
@@ -267,6 +222,18 @@ const styles = StyleSheet.create({
   selectText: {
     fontSize: hp('1.5%'),
   },
+  registView: {
+    backgroundColor: '#884A39',
+    padding: 8,
+    borderRadius: 10,
+    margin: 20
+  },
+  addFoodText: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 32,
+    fontFamily: 'gothic'
+  }
 });
 
 export default AddProductScreen;

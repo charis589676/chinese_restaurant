@@ -1,6 +1,7 @@
 import React from 'react'
 import {View, TextInput, StyleSheet} from 'react-native'
 import {Icon} from 'react-native-elements'
+import { color } from 'react-native-reanimated'
 
 export const InputComponent = (props) => {
     const {isDescription, isIcon} = props
@@ -25,6 +26,8 @@ const styles = StyleSheet.create({
         borderBottomWidth : 1,
         textAlignVertical: 'bottom',
         fontSize: 16,
-        width: '100%'
+        width: '100%',
+        color: '#F97B22',
+        backgroundColor: '#DBE2EF'
     }
 })
