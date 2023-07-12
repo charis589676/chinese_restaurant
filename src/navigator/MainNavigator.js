@@ -27,7 +27,7 @@ const DrawerNav = () => {
                 />
 
             }}/>
-           
+
         </Drawer.Navigator>
     )
 }
@@ -43,7 +43,7 @@ const MainNavigator = () => {
                         headerShown: false
                     }}
                 />
-               
+
             </Stack.Navigator>
         </NavigationContainer>
     )
@@ -51,4 +51,3 @@ const MainNavigator = () => {
 
 export default MainNavigator
 
-const styles = StyleSheet.create({})
