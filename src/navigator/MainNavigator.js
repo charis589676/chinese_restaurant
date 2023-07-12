@@ -6,6 +6,8 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import {Icon} from 'react-native-elements';
 import HomeScreen from '../screen/HomeScreen';
 import AddProductScreen from '../screen/AddProductScreen';
+import ShowProductScreen from '../screen/ShowProductScreen';
+
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 
@@ -48,6 +50,10 @@ const MainNavigator = () => {
           options={{
             headerShown: false,
           }}
+        />
+        <Stack.Screen
+          name="ShowProduct"
+          component={ShowProductScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>

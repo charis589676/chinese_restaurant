@@ -12,21 +12,9 @@ const ShowProductScreen = (props) => {
     const [data, setData] = useState([])
     const [isRemove, SetIsRemove] =useState(false)
     const [isBuy, setIsBuy] = useState(false)
-    const [contact, setContact] = useState({
-        phoneNumber : '',
-        instagram : '',
-        facebook : '',
-    })
-    const buyProduct = (whatsapp, instagramId, facebookId) =>{
-        setContact({
-            phoneNumber : whatsapp,
-            instagram : instagramId,
-            facebook: facebookId
-        })
-        setIsBuy(true)
-    }
+
     const collectData = () => {
-        const allData = realm.objects('Product').filtered(`category = ${category}`)
+        const allData = realm.objects('productFood').filtered(`category = ${category}`)
         const newData = allData.map((item) => {
             item.checkedStatus = false;
             return item
@@ -43,15 +31,6 @@ const ShowProductScreen = (props) => {
         return productPage
     }, [])
 
-    const onClickMedia =(type) => {
-        if(type === 'whatsapp'){
-            Linking.openURL(`https://wa.me/${contact.phoneNumber}`)
-        }else if(type=== 'instagram'){
-            Linking.openURL(`https://www.instagram.com/${contact.instagram}`)
-        }else if(type === 'facebook'){
-            Linking.openURL(`https://m.me/${contact.facebook}`)
-        }
-    }
 
     const setCheckBox = (id, status) => {
         const newData =data.map ((item) => {
@@ -82,7 +61,7 @@ const ShowProductScreen = (props) => {
         if(checkedTrue.length !== 0) {
             realm.write(() => {
                 for(i =0; i<checkedTrue.length; i++) {
-                    const removeData = realm.objects('Product').filtered(`id = ${checkedTrue[i]}`)
+                    const removeData = realm.objects('productFood').filtered(`id = ${checkedTrue[i]}`)
                     realm.delete(removeData)
                 }
             })
@@ -107,7 +86,7 @@ const ShowProductScreen = (props) => {
                                 <Image style={styles.image} source={{uri: item.imagePath}} />
                             </TouchableOpacity>
                             <View style={styles.textContainer}>
-                                <Text style={styles.title}>{item.productName}</Text>
+                                <Text style={styles.title}>{item.foodName}</Text>
                                 <Text style={styles.text}>{item.description}</Text>
                                 <Text style={styles.text}>${item.price}</Text>
                             </View>

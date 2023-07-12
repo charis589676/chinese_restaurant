@@ -115,7 +115,7 @@ const AddProductScreen = () => {
         </View>
         <View style={styles.horizontalContainer}>
           <InputComponent
-            placeholder="Product Name"
+            placeholder="Food Name"
             value={productData.productName}
             onChangeText={text => onInputChange('productName', text)}
           />
@@ -153,9 +153,9 @@ const AddProductScreen = () => {
         </View>
         <View style={styles.buttonContainer}>
           <TouchableOpacity
-            style={styles.saveButton}
+            style={styles.save}
             onPress={() => saveData()}>
-            <Text style={styles.saveText}>SAVE</Text>
+            <Text style={styles.saveText}>SAVE YOUR PRODUCT</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>
@@ -200,16 +200,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginBottom: 8,
   },
-  saveButton: {
+  save: {
     marginTop: 16,
     borderWidth: 1,
     borderRadius: 5,
     paddingVertical: 8,
     paddingHorizontal: 16,
-    backgroundColor: 'mistyrose',
+    backgroundColor: '#E55807',
   },
   saveText: {
-    color: 'black',
+    color: 'white',
     fontSize: hp('2.5%'),
   },
   selectDropdown: {
