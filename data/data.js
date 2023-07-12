@@ -1,6 +1,6 @@
 export const imageSlider = ["https://th.bing.com/th/id/OIP.vBMPYMd3pVmjl_9At0PrswHaD4?w=321&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7", "https://th.bing.com/th/id/OIP.Lm0T80XMfDGycne5XqnFjwHaE8?w=253&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7", "https://th.bing.com/th/id/OIP.FXyMnj9Bi8AIM1PeXsmkogHaFj?w=216&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7"]
 
-export const CategoryList = [
+export const categoryList = [
     {
         id: 1,
         name: 'Noodle',
@@ -20,12 +20,12 @@ export const CategoryList = [
         id: 4,
         name: 'Fried Rice',
         icon : 'https://christieathome.com/wp-content/uploads/2020/03/Chinese-Chicken-Fried-Rice-14.jpg'
-    }, 
+    },
     {
         id: 5,
         name: 'Soup',
         icon : 'https://www.thespruceeats.com/thmb/LlAdE3jWxxaNk25G1mnMCcOIrYA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/easy-egg-drop-soup-recipes-4071423-hero-02-6070f3ceefcd4ee3acfdba4e29a8a187.jpg'
-    }, 
+    },
     {
         id: 6,
         name: 'Meat',

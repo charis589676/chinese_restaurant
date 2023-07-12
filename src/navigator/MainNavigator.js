@@ -15,9 +15,15 @@ const DrawerNav = () => {
             name='Home'
             component={HomeScreen}
             options={{
+<<<<<<< HEAD
                 title: 'Chinese food',
                 headerStyle: {
                     backgroundColor: '#A8A196'
+=======
+                title: 'Chineesee Food',
+                headerStyle: {
+                    backgroundColor: '#D3E5C2'
+>>>>>>> 2e751d722215c61121a00783ef83d24d46375bd2
                 },
                 headerTitleAlign: 'center',
                 drawerIcon: config =>
@@ -27,7 +33,7 @@ const DrawerNav = () => {
                 />
 
             }}/>
-           
+
         </Drawer.Navigator>
     )
 }
@@ -43,7 +49,11 @@ const MainNavigator = () => {
                         headerShown: false
                     }}
                 />
+<<<<<<< HEAD
             
+=======
+
+>>>>>>> 2e751d722215c61121a00783ef83d24d46375bd2
             </Stack.Navigator>
         </NavigationContainer>
     )
@@ -51,4 +61,3 @@ const MainNavigator = () => {
 
 export default MainNavigator
 
-const styles = StyleSheet.create({})
