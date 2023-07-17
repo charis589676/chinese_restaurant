@@ -77,7 +77,8 @@ const styles = StyleSheet.create({
         height: hp('17%'),
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#FFA559'
+        backgroundColor: '#FFA559',
+        borderRadius: 12
     },
     icon: {
         width: wp('20%'),
