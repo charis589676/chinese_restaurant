@@ -111,8 +111,9 @@ const ShowProductScreen = (props) => {
             ListEmptyComponent={
                 <View style={{alignItems: 'center', margin: 8, color: 'red'}}>
                     <Text>
-                        <br>WARNING!</br> No Items, you can add your item!
+                        WARNING!
                     </Text>
+                        <Text> No Items, you can add your item!</Text>
                 </View>
             }
             />
