@@ -54,6 +54,11 @@ const MainNavigator = () => {
         <Stack.Screen
           name="ShowProduct"
           component={ShowProductScreen}
+          option={{
+            headerStyle: {
+              backgroundColor: '#A8A196',
+            },
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>

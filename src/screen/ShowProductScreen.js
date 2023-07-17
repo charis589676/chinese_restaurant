@@ -146,15 +146,15 @@ const ShowProductScreen = (props) => {
 const styles = StyleSheet.create({
     mainContainer : {
         flex: 1,
-        backgroundColor : 'white'
+        backgroundColor : '#FBEEAC'
     }, flatListContainer : {
         padding: 8
     }, itemButton : {
         margin : 8,
         padding: 16,
-        borderColor: '#7CAF58',
-        borderWidth: 1,
-        borderRadius: 10,
+        borderColor: '#EF6262',
+        borderWidth: 5,
+        backgroundColor: '#FFA41B',
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between'
