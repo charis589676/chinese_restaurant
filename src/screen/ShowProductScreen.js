@@ -113,7 +113,9 @@ const ShowProductScreen = (props) => {
                     <Text>
                         WARNING!
                     </Text>
-                        <Text> No Items, you can add your item!</Text>
+                    <Text> 
+                        No Items, you can add your item!
+                    </Text>
                 </View>
             }
             />
@@ -146,7 +148,7 @@ const ShowProductScreen = (props) => {
 const styles = StyleSheet.create({
     mainContainer : {
         flex: 1,
-        backgroundColor : '#FBEEAC'
+        backgroundColor : '#7D7463'
     }, flatListContainer : {
         padding: 8
     }, itemButton : {
@@ -154,7 +156,7 @@ const styles = StyleSheet.create({
         padding: 16,
         borderColor: '#EF6262',
         borderWidth: 5,
-        backgroundColor: '#FFA41B',
+        backgroundColor: '#A8A196',
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between'
