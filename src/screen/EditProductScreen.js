@@ -10,7 +10,7 @@ import {
 import React, {useState, useEffect, useRef} from 'react';
 import ImagePicker from 'react-native-image-crop-picker';
 import {InputComponent} from '../components/InputComponent';
-import {categoryList} from '../../data/Data';
+import {categoryList} from '../../data/data';
 import SelectDropdown from 'react-native-select-dropdown';
 import realm from '../../store/realm';
 import {
@@ -27,10 +27,7 @@ const EditProductScreen = props => {
     imagePath: '',
     category: null,
     description: '',
-    price: null,
-    instagram: '',
-    facebook: '',
-    phoneNumber: '',
+    phoneNumber: ''
   });
 
   useEffect(() => {
@@ -197,7 +194,7 @@ const EditProductScreen = props => {
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: '#7D7463',
   },
   scroll: {
     margin: 8,
