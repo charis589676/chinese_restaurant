@@ -7,6 +7,8 @@ import {Icon} from 'react-native-elements';
 import HomeScreen from '../screen/HomeScreen';
 import AddProductScreen from '../screen/AddProductScreen';
 import ShowProductScreen from '../screen/ShowProductScreen';
+import EditProductScreen from '../screen/EditProductScreen';
+import ImageZoomScreen from '../screen/ImageZoomScreen';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -58,6 +60,22 @@ const MainNavigator = () => {
             headerStyle: {
               backgroundColor: '#A8A196',
             },
+          }}
+        />
+        <Stack.Screen
+          name="EditProduct"
+          component={EditProductScreen}
+          option={{
+            headerStyle: {
+              backgroundColor: '#A8A196',
+            },
+          }}
+        />
+        <Stack.Screen
+          name="ImageZoom"
+          component={ImageZoomScreen}
+          options={{
+            headerShown: false,
           }}
         />
       </Stack.Navigator>

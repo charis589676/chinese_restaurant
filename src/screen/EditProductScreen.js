@@ -9,8 +9,8 @@ import {
 } from 'react-native';
 import React, {useState, useEffect, useRef} from 'react';
 import ImagePicker from 'react-native-image-crop-picker';
-import {InputComponent} from '../components/InputComponent';
-import {categoryList} from '../../data/Data';
+import {InputComponent} from '../component/InputComponent';
+import {categoryList} from '../../data/data';
 import SelectDropdown from 'react-native-select-dropdown';
 import realm from '../../store/realm';
 import {
@@ -23,27 +23,21 @@ const EditProductScreen = props => {
   const {route} = props;
   const idProduct = route.params.idProduct;
   const [productData, setProductData] = useState({
-    productName: '',
+    foodName: '',
     imagePath: '',
     category: null,
     description: '',
     price: null,
-    instagram: '',
-    facebook: '',
-    phoneNumber: '',
   });
 
   useEffect(() => {
-    const data = realm.objects('Product').filtered(`id = ${idProduct}`)[0];
+    const data = realm.objects('productFood').filtered(`id = ${idProduct}`)[0];
     setProductData({
-      productName: data.productName,
+      foodName: data.foodName,
       imagePath: data.imagePath,
       category: data.category,
       description: data.description,
       price: String(data.price),
-      instagram: data.instagram,
-      facebook: data.facebook,
-      phoneNumber: data.phoneNumber,
     });
   }, [idProduct]);
   const onInputChange = (type, value) => {
@@ -73,32 +67,23 @@ const EditProductScreen = props => {
 
   const saveData = () => {
     const updatedData = realm
-      .objects('Product')
+      .objects('productFood')
       .filtered(`id = ${idProduct}`)[0];
     if (
-      productData.productName === '' ||
+      productData.foodName === '' ||
       productData.imagePath === '' ||
       productData.description === '' ||
       productData.price === '' ||
       productData.category === null
     ) {
       alert('Please fill all ');
-    } else if (
-      productData.phoneNumber === '' &&
-      productData.instagram === '' &&
-      productData.facebook === ''
-    ) {
-      alert('Please fill at least one seller contact !');
     } else {
       if (
-        updatedData.foodName === productData.productName &&
+        updatedData.foodName === productData.foodName &&
         updatedData.imagePath === productData.imagePath &&
         updatedData.category === productData.category &&
         updatedData.description === productData.description &&
-        updatedData.price === parseInt(updatedData.price) &&
-        updatedData.facebook === updatedData.facebook &&
-        updatedData.instagram === updatedData.instagram &&
-        updatedData.phoneNumber === productData.phoneNumber
+        updatedData.price === parseInt(updatedData.price)
       ) {
         Alert.alert('Nothing Change', 'You did not change anything', [
           {
@@ -107,8 +92,9 @@ const EditProductScreen = props => {
           },
         ]);
       } else {
+
         realm.write(() => {
-          updatedData.productName = productData.foodName;
+          updatedData.foodName = productData.foodName;
           updatedData.imagePath = productData.imagePath;
           updatedData.category = productData.category;
           updatedData.description = productData.description;
@@ -147,8 +133,8 @@ const EditProductScreen = props => {
         <View style={styles.horizontalContainer}>
           <InputComponent
             placeholder="Product Name"
-            value={productData.productName}
-            onChangeText={text => onInputChange('productName', text)}
+            value={productData.foodName}
+            onChangeText={text => onInputChange('foodName', text)}
           />
           <SelectDropdown
             data={categoryList}
