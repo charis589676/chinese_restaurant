@@ -37,10 +37,7 @@ const EditProductScreen = props => {
       imagePath: data.imagePath,
       category: data.category,
       description: data.description,
-      price: String(data.price),
-      instagram: data.instagram,
-      facebook: data.facebook,
-      phoneNumber: data.phoneNumber,
+      price: String(data.price)
     });
   }, [idProduct]);
   const onInputChange = (type, value) => {
@@ -92,10 +89,7 @@ const EditProductScreen = props => {
         updatedData.imagePath === productData.imagePath &&
         updatedData.category === productData.category &&
         updatedData.description === productData.description &&
-        updatedData.price === parseInt(updatedData.price) &&
-        updatedData.facebook === updatedData.facebook &&
-        updatedData.instagram === updatedData.instagram &&
-        updatedData.phoneNumber === productData.phoneNumber
+        updatedData.price === parseInt(updatedData.price)
       ) {
         Alert.alert('Nothing Change', 'You did not change anything', [
           {
