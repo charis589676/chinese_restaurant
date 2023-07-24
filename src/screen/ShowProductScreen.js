@@ -99,7 +99,7 @@ const ShowProductScreen = (props) => {
                             />
                             :
                             <TouchableOpacity onPress={() => {
-                                Linking.openURL(`whatsapp://send?text=Hello, I want to buy !&phone=+628123456789`)
+                                buyProduct(item.phoneNumber, item.instagram, item.facebook)
                             }}>
                                 <Icon name="shoppingcart" type="antdesign" size={30} />
                             </TouchableOpacity>
@@ -113,7 +113,7 @@ const ShowProductScreen = (props) => {
                     <Text>
                         WARNING!
                     </Text>
-                    <Text>
+                    <Text> 
                         No Items, you can add your item!
                     </Text>
                 </View>

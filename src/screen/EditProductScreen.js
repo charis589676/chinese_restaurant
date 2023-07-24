@@ -37,6 +37,7 @@ const EditProductScreen = props => {
       imagePath: data.imagePath,
       category: data.category,
       description: data.description,
+
       price: String(data.price),
     });
   }, [idProduct]);
@@ -92,7 +93,6 @@ const EditProductScreen = props => {
           },
         ]);
       } else {
-
         realm.write(() => {
           updatedData.foodName = productData.foodName;
           updatedData.imagePath = productData.imagePath;
@@ -183,7 +183,7 @@ const EditProductScreen = props => {
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: '#7D7463',
   },
   scroll: {
     margin: 8,
