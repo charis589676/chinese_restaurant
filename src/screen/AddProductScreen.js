@@ -206,6 +206,7 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     paddingHorizontal: 16,
     backgroundColor: '#E55807',
+
   },
   saveText: {
     color: 'white',
